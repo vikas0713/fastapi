@@ -20,6 +20,7 @@ class UserDisplay(BaseModel):
 # For post display
 class User(BaseModel):
     username: str
+
     class Config:
         orm_mode = True
 
@@ -38,3 +39,12 @@ class PostDisplay(BaseModel):
     caption: str
     timestamp: datetime
     user: User
+
+    class Config:
+        orm_mode = True
+
+
+class UserAuth(BaseModel):
+    id: int
+    username: str
+    email: str
